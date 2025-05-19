@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -213,7 +213,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Linked_List_Lab.html">Linked_List</a></li>
-
 
 
 
@@ -437,6 +436,9 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises!</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-stack">Reverse: Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-example-in-your-python-try-the-below">Fun Example: in your Python, try the below</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-check-if-a-word-is-a-palindrome-using-stack">Final Example: Check if a Word is a Palindrome Using Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-student-learns">🧠 What the student learns:</a></li>
 </ul>
 </li>
 </ul>
@@ -633,6 +635,47 @@ Elements from top to bottom:
 </div>
 </div>
 </section>
+<section id="final-example-check-if-a-word-is-a-palindrome-using-stack">
+<h2>Final Example: Check if a Word is a Palindrome Using Stack<a class="headerlink" href="#final-example-check-if-a-word-is-a-palindrome-using-stack" title="Link to this heading">#</a></h2>
+<p>Task:</p>
+<p>A palindrome is a word that reads the same forward and backward (e.g., “level”, “madam”).
+Write a function is_palindrome(word: str) -&gt; bool that uses a stack to check if a word is a palindrome.</p>
+</section>
+<section id="solution">
+<h2>✅ Solution:<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+    <span class="n">reversed_word</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+        <span class="n">reversed_word</span> <span class="o">+=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">word</span> <span class="o">==</span> <span class="n">reversed_word</span>
+
+<span class="c1"># Example usage</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">))</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span>  <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-the-student-learns">
+<h2>🧠 What the student learns:<a class="headerlink" href="#what-the-student-learns" title="Link to this heading">#</a></h2>
+<p>Using a Stack to Reverse Strings – practical application of LIFO.</p>
+<p>String Comparison – checks for equality after transformation.</p>
+<p>Concept of Palindromes – a common beginner-level CS topic.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -712,6 +755,9 @@ Elements from top to bottom:
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises!</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-stack">Reverse: Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-example-in-your-python-try-the-below">Fun Example: in your Python, try the below</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-check-if-a-word-is-a-palindrome-using-stack">Final Example: Check if a Word is a Palindrome Using Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-student-learns">🧠 What the student learns:</a></li>
 </ul>
 </li>
 </ul>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -212,7 +212,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Linked_List_Lab.html">Linked_List</a></li>
-
 
 
 
@@ -437,6 +436,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-queue">Reverse: Queue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#palindrome">Palindrome</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-example-in-your-python-try-the-below">Fun Example: in your Python, try the below</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-supermarket-queue-simulation">Final Example: Supermarket Queue Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-student-learns">🧠 What the student learns:</a></li>
 </ul>
 </li>
 </ul>
@@ -653,6 +655,59 @@ Fri Thurs Wed Tue Mon
 </div>
 </div>
 </section>
+<section id="final-example-supermarket-queue-simulation">
+<h2>Final Example: Supermarket Queue Simulation<a class="headerlink" href="#final-example-supermarket-queue-simulation" title="Link to this heading">#</a></h2>
+<p>Task:</p>
+<p>You’re managing a line (queue) of customers in a supermarket. You will receive a list of commands:</p>
+<p>“arrive <name>” — a customer arrives and joins the end of the queue</p>
+<p>“serve” — the first customer in line gets served and leaves the queue</p>
+<p>Write a function supermarket_queue(commands: List[str]) -&gt; List[str] that returns a list of names of the customers in the order they were served.</p>
+</section>
+<section id="solution">
+<h2>✅ Solution:<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="k">def</span> <span class="nf">supermarket_queue</span><span class="p">(</span><span class="n">commands</span><span class="p">):</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+    <span class="n">served</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">commands</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;arrive&quot;</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">command</span> <span class="o">==</span> <span class="s2">&quot;serve&quot;</span> <span class="ow">and</span> <span class="n">queue</span><span class="p">:</span>
+            <span class="n">served</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">served</span>
+
+<span class="c1"># Example</span>
+<span class="n">commands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;arrive Alice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;arrive Bob&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;serve&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;arrive Charlie&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;serve&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;serve&quot;</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Served Customers:&quot;</span><span class="p">,</span> <span class="n">supermarket_queue</span><span class="p">(</span><span class="n">commands</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Served Customers: [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-the-student-learns">
+<h2>🧠 What the student learns:<a class="headerlink" href="#what-the-student-learns" title="Link to this heading">#</a></h2>
+<p>Basic Queue Operations: enqueue (append) and dequeue (popleft) using collections.deque.</p>
+<p>Real-World Simulation: models customer service, ticketing systems, etc.</p>
+<p>Command Parsing: simple string operations to interpret commands.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -724,6 +779,9 @@ Fri Thurs Wed Tue Mon
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-queue">Reverse: Queue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#palindrome">Palindrome</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-example-in-your-python-try-the-below">Fun Example: in your Python, try the below</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-supermarket-queue-simulation">Final Example: Supermarket Queue Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-student-learns">🧠 What the student learns:</a></li>
 </ul>
 </li>
 </ul>
