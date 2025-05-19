@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -213,7 +213,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Linked_List</a></li>
-
 
 
 
@@ -440,9 +439,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#append-insert-getnode">Append, Insert, getNode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">Pop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get">Get</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-find-the-middle-element-of-a-linked-list">Final Example: Find the Middle Element of a Linked List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-solution">✅ Sample Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-learn">🧠 What You Learn:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-other-methods-in-singlylinkedlist-and-circularlinkedlist-class">Explore Other Methods in SinglyLinkedList and CircularLinkedList Class</a></li>
 </ul>
 
             </nav>
@@ -690,9 +691,62 @@ Element in the linked list after using get:
 </div>
 </div>
 </section>
+<section id="final-example-find-the-middle-element-of-a-linked-list">
+<h2>Final Example: Find the Middle Element of a Linked List<a class="headerlink" href="#final-example-find-the-middle-element-of-a-linked-list" title="Link to this heading">#</a></h2>
+<p>Task:
+Write a Python program that:</p>
+<p>Builds a singly linked list from a list of integers.</p>
+<p>Implements a function find_middle(head) that returns the middle element of the list.</p>
+<p>If the number of nodes is even, return the second of the two middle nodes.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="explore-other-methods-in-singlylinkedlist-and-circularlinkedlist-class">
-<h1>Explore Other Methods in SinglyLinkedList and CircularLinkedList Class<a class="headerlink" href="#explore-other-methods-in-singlylinkedlist-and-circularlinkedlist-class" title="Link to this heading">#</a></h1>
+<section id="sample-solution">
+<h2>✅ Sample Solution:<a class="headerlink" href="#sample-solution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">build_linked_list</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">values</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">head</span>
+
+<span class="k">def</span> <span class="nf">find_middle</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+    <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">if</span> <span class="n">fast</span><span class="p">:</span>
+            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">slow</span><span class="o">.</span><span class="n">data</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">head</span> <span class="o">=</span> <span class="n">build_linked_list</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Middle element:&quot;</span><span class="p">,</span> <span class="n">find_middle</span><span class="p">(</span><span class="n">head</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Middle element: 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-you-learn">
+<h2>🧠 What You Learn:<a class="headerlink" href="#what-you-learn" title="Link to this heading">#</a></h2>
+<p>How to build a custom singly linked list</p>
+<p>How to traverse the list using two pointers (slow, fast)</p>
+<p>A classic algorithm to find the middle of a linked list in O(n) time</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -775,9 +829,11 @@ Element in the linked list after using get:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#append-insert-getnode">Append, Insert, getNode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pop">Pop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get">Get</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-find-the-middle-element-of-a-linked-list">Final Example: Find the Middle Element of a Linked List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-solution">✅ Sample Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-learn">🧠 What You Learn:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-other-methods-in-singlylinkedlist-and-circularlinkedlist-class">Explore Other Methods in SinglyLinkedList and CircularLinkedList Class</a></li>
 </ul>
 
   </nav></div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -213,7 +213,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Linked_List_Lab.html">Linked_List</a></li>
-
 
 
 
@@ -458,6 +457,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-importing">Module: Importing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Module: Importing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-re-naming-a-module">Module: Re-naming a Module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-statistics-calculator-for-numbers">Final Example: Statistics Calculator for Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-student-learns">🧠 What the student learns:</a></li>
 </ul>
 </li>
 </ul>
@@ -505,7 +507,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/content/drive/MyDrive/2025_Teaching/2025_Data_Structures/Code&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;D:\DataStructureCode&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -863,7 +865,7 @@ Exit while loop as i is equal to 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/06bc474b91c6413a9daa24eade444042177f651d8252042ede759dd3d3df63a9.png" src="_images/06bc474b91c6413a9daa24eade444042177f651d8252042ede759dd3d3df63a9.png" />
+<img alt="_images/066f3e362c1519bad3b28422bfadfe830c23593ffc248d9c3c1093fb40558145.png" src="_images/066f3e362c1519bad3b28422bfadfe830c23593ffc248d9c3c1093fb40558145.png" />
 </div>
 </div>
 </section>
@@ -952,7 +954,7 @@ Access age variable inside object: 25
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Amy
 I&#39;m 55 years old
-&lt;__main__.MyClass object at 0x789f405dfe50&gt;
+&lt;__main__.MyClass object at 0x7d8e01f3c650&gt;
 </pre></div>
 </div>
 </div>
@@ -1036,7 +1038,7 @@ I&#39;m 55 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MyClass object at 0x000001AC8650E630&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.MyClass object at 0x7d8e01f3ddd0&gt;
 My name is Apple and I&#39;m 55 years old.
 </pre></div>
 </div>
@@ -1117,6 +1119,12 @@ I&#39;m 25 years old
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a function inside of a file mymodule.py
+My name is Ewha
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="module-re-naming-a-module">
@@ -1132,7 +1140,74 @@ I&#39;m 25 years old
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a function inside of a file mymodule.py
+My name is Ewha
+I&#39;m 25 years old
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="final-example-statistics-calculator-for-numbers">
+<h2>Final Example: Statistics Calculator for Numbers<a class="headerlink" href="#final-example-statistics-calculator-for-numbers" title="Link to this heading">#</a></h2>
+<p>*Task</p>
+<p>Write a Python program that:</p>
+<p>-Asks the user to input a list of numbers (comma-separated),
+-Converts the input into a list of integers,</p>
+<p>Outputs:</p>
+<p>Maximum
+Minimum
+Average (mean)
+Median</p>
+</section>
+<section id="solution">
+<h2>✅ Solution:<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_numbers</span><span class="p">():</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter numbers separated by commas: &quot;</span><span class="p">)</span>  <span class="c1"># e.g. 5,1,9,2,3</span>
+    <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">nums</span>
+
+<span class="k">def</span> <span class="nf">compute_statistics</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">median</span>
+
+<span class="c1"># Main program logic</span>
+<span class="n">nums</span> <span class="o">=</span> <span class="n">get_numbers</span><span class="p">()</span>
+<span class="n">max_val</span><span class="p">,</span> <span class="n">min_val</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="n">med</span> <span class="o">=</span> <span class="n">compute_statistics</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;📊 Statistics for the entered numbers:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum:&quot;</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum:&quot;</span><span class="p">,</span> <span class="n">min_val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average:&quot;</span><span class="p">,</span> <span class="n">avg</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median:&quot;</span><span class="p">,</span> <span class="n">med</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter numbers separated by commas: 1,45,325,69,21,3,7
+📊 Statistics for the entered numbers:
+Maximum: 325
+Minimum: 1
+Average: 67.29
+Median: 21
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-the-student-learns">
+<h2>🧠 What the student learns:<a class="headerlink" href="#what-the-student-learns" title="Link to this heading">#</a></h2>
+<p>Reading input from the user (input)</p>
+<p>Converting strings into integers</p>
+<p>List manipulation and sorting</p>
+<p>Basic math computations: mean and median</p>
+<p>Conditional logic (for median)</p>
 </section>
 </section>
 
@@ -1234,6 +1309,9 @@ I&#39;m 25 years old
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-importing">Module: Importing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Module: Importing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-re-naming-a-module">Module: Re-naming a Module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-statistics-calculator-for-numbers">Final Example: Statistics Calculator for Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-student-learns">🧠 What the student learns:</a></li>
 </ul>
 </li>
 </ul>

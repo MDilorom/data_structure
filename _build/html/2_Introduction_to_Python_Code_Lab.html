@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -213,7 +213,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Linked_List_Lab.html">Linked_List</a></li>
-
 
 
 
@@ -434,7 +433,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package">Package</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-find-the-longest-word">Final Example: Find the Longest Word</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered-in-this-example">🧠 Topics Covered in This Example:</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -671,6 +675,54 @@ Date: 2025-03-15 , Status Present
 </div>
 </div>
 </div>
+<section id="final-example-find-the-longest-word">
+<h2>Final Example: Find the Longest Word<a class="headerlink" href="#final-example-find-the-longest-word" title="Link to this heading">#</a></h2>
+<p>Task:</p>
+<p>Write a program that:</p>
+<p>Asks the user to enter a sentence.
+Splits the sentence into words.
+Sorts the words by length.
+Prints the longest word and its length.</p>
+</section>
+<section id="solution">
+<h2>✅ Solution:<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_sentence</span><span class="p">():</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a sentence: &quot;</span><span class="p">)</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">words</span>
+
+<span class="k">def</span> <span class="nf">find_longest_word</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Main logic</span>
+<span class="n">word_list</span> <span class="o">=</span> <span class="n">get_sentence</span><span class="p">()</span>
+<span class="n">longest_word</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">find_longest_word</span><span class="p">(</span><span class="n">word_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🔠 The longest word is:&quot;</span><span class="p">,</span> <span class="n">longest_word</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;📏 Length:&quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter a sentence: Python programming is fun and educational
+🔠 The longest word is: programming
+📏 Length: 11
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="topics-covered-in-this-example">
+<h2>🧠 Topics Covered in This Example:<a class="headerlink" href="#topics-covered-in-this-example" title="Link to this heading">#</a></h2>
+<p>input() — user input</p>
+<p>.strip() and .split() — string methods</p>
+<p>sort(key=len) — custom sorting</p>
+<p>len() — built-in function for length</p>
+<p>Functions and modular code</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -747,7 +799,12 @@ Date: 2025-03-15 , Status Present
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package">Package</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-example-find-the-longest-word">Final Example: Find the Longest Word</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">✅ Solution:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered-in-this-example">🧠 Topics Covered in This Example:</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
